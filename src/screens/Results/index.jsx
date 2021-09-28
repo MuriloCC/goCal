@@ -3,8 +3,10 @@ import { View, Text } from 'react-native';
 import { GreenButton } from '../../components/GreenButton';
 import { styles } from './styles';
 
-export function Results({ navigation }){
-    const changePage = () => {
+export function Results({ route, navigation }){
+    const { tmb } = route.params;
+
+    function changePage(){
         navigation.navigate("Settings")
     }
 
@@ -15,7 +17,7 @@ export function Results({ navigation }){
 
             <View style={styles.resultView}>
                 <Text style={styles.subTitle}>Seu metabolismo basal é de: </Text>
-                <Text style={styles.cal}>????</Text>
+                <Text style={styles.cal}>{tmb}</Text>
 
                 <Text style={styles.subTitle}>Para manter seu peso você precisa consumir em média:</Text>
                 <Text style={styles.cal}>????</Text>
@@ -30,7 +32,7 @@ export function Results({ navigation }){
             <GreenButton 
                 title="Reiniciar"
                 activeOpacity={0.7}
-                onPress={() => {changePage()}}
+                onPress={() => changePage()}
             />
         </View>
     );

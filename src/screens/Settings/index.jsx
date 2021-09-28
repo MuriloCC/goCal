@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
 import { Text, View, TextInput } from 'react-native';
 
 import { GreenButton } from '../../components/GreenButton';
-
 import { styles } from './styles';
 
 export function Settings({ navigation }){
